@@ -17,7 +17,8 @@ https://colab.research.google.com/github/AI4Bharat/indicTrans/blob/main/indicTra
 
 IndicTrans documentation: https://github.com/AI4Bharat/indicTrans
 
-### .bin files
+### models
+contain .bin files
 These are the models stored in binary forms
 
 format:
