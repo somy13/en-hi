@@ -1,6 +1,6 @@
 # en-hi
 
-# Tweet-Preprocessor
+### Tweet-Preprocessor
 
 Before
 ![image](https://user-images.githubusercontent.com/34676227/146254334-f098c2c3-19ee-4404-9d51-d20ac9c6a384.png)
@@ -11,13 +11,13 @@ After
 Documentation for tweet-preprocessor available at: https://pypi.org/project/tweet-preprocessor/
 
 
-# IndicTrans Model
+### IndicTrans Model
 Finetuned from:
 https://colab.research.google.com/github/AI4Bharat/indicTrans/blob/main/indicTrans_python_interface.ipynb
 
 IndicTrans documentation: https://github.com/AI4Bharat/indicTrans
 
-# .bin files
+### .bin files
 These are the models stored in binary forms
 
 format:
@@ -26,6 +26,6 @@ model_hi<_domain>_it.bin : models developed on embeddings from data translated f
 
 Sample size for the models was taken the same as test sample space.
 
-# WEAT queries
+### WEAT queries
 Were executed for 5 attribute sets as listed
 
