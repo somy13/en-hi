@@ -1,0 +1,61 @@
+from wefe.query import Query
+from wefe.word_embedding_model import WordEmbeddingModel
+from wefe.metrics.WEAT import WEAT
+import gensim.downloader as api
+
+# create the word sets
+hitarget_sets = [['महिला', 'लड़की', 'महिलाएं', 'महिला', 'लड़कियां', 'बहन', 'बेटी'], ['पुरुष', 'लड़का', 'पुरुषों', 'लड़कों', 'सज्जनों', 'भाई', 'बेटा']]
+hitarget_sets_names = ['Female Terms', 'Male Terms']
+
+# hiattribute_sets1 = [['कविता', 'नृत्य', 'साहित्य', 'फ़िल्म', 'फ़िल्में', 'अभिनय', 'फ़िल्म', 'गैलरी', 'स्थान', 'विदेशी', 'गीत', 'भाषा', 'शो', 'प्लेटफ़ॉर्म'], ['गणित', 'भौतिकी', 'डॉक्टर', 'इंजीनियर', 'इनोवेट', 'डिस्कवर', 'फंड', 'हॉस्पिटल', 'कंपनी', 'रिसर्च', 'दवा', 'संस्थापक', 'प्रौद्योगिकी', 'जीव विज्ञान']]
+# hiattribute_sets_names1 = ['Arts', 'Science']
+
+hiattribute_sets2 = [['परिवार', 'घर', 'बच्चों', 'बच्चों', 'खाना', 'शादी', 'रिश्तेदार'], ['करियर', 'कार्यालय', 'तकनीक', 'शोध', 'व्यवसाय', 'पेशेवर', 'कार्यकारी']]
+hiattribute_sets_names2 = ['Family', 'Career']
+
+# hiattribute_sets3 = [['स्लिम', 'ग्रेसफुल', 'ब्यूटीफुल', 'सुंदर', 'स्मार्ट', 'फैट', 'बीहड़', 'सुंदर', 'मोटापे', 'फैशन', 'वोग', 'फिट', 'कूल', 'थका हुआ', 'प्यारा', 'पीला', 'अनफिट', 'चिंता', 'भयानक'], ['कमजोर', 'मजबूत', 'भारी', 'हल्का', 'वजन', 'रिब्ड', 'एब्स', 'मांसपेशी', 'शक्ति', 'शक्तिशाली', 'ऊर्जावान', 'सुरक्षित', 'असुरक्षित', 'भेद्य', 'बल', 'शांत', 'कमजोर', 'जवान','बूढ़ा']]
+# hiattribute_sets_names3 = ['Looks', 'Strength']
+
+# hiattribute_sets4 = [['विनम्र', 'शर्मीली', 'विनम्र', 'सम्मान', 'सम्मानजनक', 'सम्माननीय', 'सम्मान', 'दयालु', 'पसंद', 'आसान'], ['असभ्य', 'हिट', 'अशिष्ट', 'अभद्र', 'अपमानजनक', 'कच्चा', 'अज्ञानी', 'लड़ाई', 'कठिन', 'अपमानजनक']]
+# hiattribute_sets_names4 = ['Polite', 'Impolite']
+
+hiattribute_sets5 = [['चोट', 'मृत', 'मर', 'अस्पताल', 'मारे गए', 'फांसी', 'पीटा', 'गुलाम', 'थप्पड़', 'हमला', 'धमकी', 'परेशान'], ['मार', 'लड़ाई', 'बंदूक', 'छुरा', 'जेल', 'एनकाउंटर', 'भाग','संदिग्ध', 'आरोप', 'गिरफ्तार', 'सबूत', 'वीडियो']]
+hiattribute_sets_names5 = ['Victim', 'Perpetrator']
+
+
+# create the query
+hiquery1 = Query(hitarget_sets, hiattribute_sets1, hitarget_sets_names,
+              hiattribute_sets_names1)
+
+hiquery2 = Query(hitarget_sets, hiattribute_sets2, hitarget_sets_names,
+              hiattribute_sets_names2)
+
+hiquery3 = Query(hitarget_sets, hiattribute_sets3, hitarget_sets_names,
+              hiattribute_sets_names3)
+
+hiquery4 = Query(hitarget_sets, hiattribute_sets4, hitarget_sets_names,
+              hiattribute_sets_names4)
+
+hiquery5 = Query(hitarget_sets, hiattribute_sets5, hitarget_sets_names,
+              hiattribute_sets_names5)
+              
+              
+# instance a WEAT metric
+weat = WEAT()
+himodel_rc = WordEmbeddingModel(model_hi_rc_it.wv)
+
+
+hiresult1 = weat.run_query(hiquery1, himodel_rc)
+print(hiresult1)
+
+hiresult2 = weat.run_query(hiquery2, himodel_rc)
+print(hiresult2)
+
+hiresult3 = weat.run_query(hiquery3, himodel_rc)
+print(hiresult3)
+
+hiresult4 = weat.run_query(hiquery4, himodel_rc)
+print(hiresult4)
+
+hiresult5 = weat.run_query(hiquery5, himodel_rc)
+print(hiresult5)
